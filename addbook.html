@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
+      function validateForm() {
+        var regs=addbookform.date.value
+       if(regs[1] < 25 || regs[1] > 31) {
+          alert("Invalid value for day: " + regs[1]);
+          addbookform.date.focus();
+          return false;
+        }
+        
+  
+}
+  </script>
+  <style>
+      .imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+img.avatar {
+  width: 30%;
+  border-radius: 50%;
+}
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Add Book form</h2>
+  <form name="addbookform" action="/action_page.php" onSubmit="return validateForm();">
+    <div class="imgcontainer">
+        <img src="photo1.jpg" alt="Avatar" class="avatar">
+      </div>
+    <div class="form-group">
+      <label for="id">Book Id:</label>
+      <input type="number" class="form-control" id="id" placeholder="Enter book id" name="id" required>
+    </div>
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" class="form-control" id="title" placeholder="Enter title" name="title" required>
+    </div>
+    <div class="form-group">
+        <label for="author">Author:</label>
+        <input type="text" class="form-control" id="author" placeholder="Enter author" name="author" required>
+    </div>
+    <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" class="form-control" id="price" placeholder="Enter price" name="price" required>
+    </div>
+    <div class="form-group">
+    <label for="genre">Genre:</label>
+    <select class="mdb-select md-form">
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">fiction</option>
+        <option value="2">comedy</option>
+        <option value="3">horror</option>
+      </select>
+      </div> 
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="date"> Date:</label>
+       
+        <input type="date" class="form-control" id="date" placeholder="Enter date"  name="date">
+        
+      </div>
+      
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
+
+</body>
+</html>
